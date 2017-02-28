@@ -1,5 +1,5 @@
 //
-//  DepartmentDetailTableViewController.swift
+//  NewDepartmentTableViewController.swift
 //  Comp
 //
 //  Created by Tommi Seppä on 28/02/17.
@@ -8,43 +8,38 @@
 
 import UIKit
 
-class DepartmentDetailTableViewController: UITableViewController {
-    @IBOutlet weak var idText: UITextField!
+class NewDepartmentTableViewController: UITableViewController {
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var dnameText: UITextField!
 
     
-    // Muuttujat osastojen tallentamista ja lapikaymsita varten
     var department: Department! = Department()
-    var depIndex: IndexPath!
-    
-    // Toimenpiteet nakyman kaynnsitamisen yhteydessa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Haetaan
-        self.idText.text = self.department.id
-        self.dnameText.text = self.department.dname
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
         
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "updateToDepartments" {
-            department.id = self.idText.text!
+        if segue.identifier == "saveToDepartment" {
+            print(self.idLabel.text!)
+            print(self.dnameText.text!)
             department.dname = self.dnameText.text!
-            
         }
     }
-    
 
-}
+    }

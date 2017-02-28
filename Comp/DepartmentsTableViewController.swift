@@ -17,12 +17,6 @@ class DepartmentsTableViewController: UITableViewController {
         
         self.refreshControl?.addTarget(self, action: #selector(DepartmentsTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         self.loadData()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func handleRefresh(_ sender:AnyObject)
@@ -30,6 +24,11 @@ class DepartmentsTableViewController: UITableViewController {
         loadData()
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func loadData() -> Void {
@@ -42,14 +41,11 @@ class DepartmentsTableViewController: UITableViewController {
                 print("dep: ")
                 print(self.departments.count)
                 self.tableView.reloadData()
+                
             })
+            
+            
         }
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -83,6 +79,32 @@ class DepartmentsTableViewController: UITableViewController {
         return true
     }
     */
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            
+            let dep = self.departments[indexPath.row]
+            Department.deleteDepartment(dep: dep, postCompleted: { (succeeded, msg) -> () in
+                print ("delete dep " + msg)
+                
+                if succeeded {
+                    
+                    self.departments.remove(at: indexPath.row)
+                    
+                }
+                // update ui
+                DispatchQueue.main.async(execute: {
+                    if (succeeded) {
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                })
+            })
+            
+        }
+    }
+    
 
     /*
     // Override to support editing the table view.
@@ -121,30 +143,44 @@ class DepartmentsTableViewController: UITableViewController {
     }
     */
     
-    // if cancel is pressed in employee details
-    @IBAction func cancelToDepartments (_ segue: UIStoryboardSegue) {
-        
-    }
-
-    /*
+    
     // if Done is pressed in employee details
-    @IBAction func saveToEmployees(_ segue:UIStoryboardSegue) {
+    @IBAction func saveToDepartment(_ segue:UIStoryboardSegue) {
         
-        if let employeeController = segue.source as? NewEmployeeViewController {
-            Employee.createEmployee(emp:employeeController.employee, postCompleted: { (succeeded, msg) -> () in
+        if let departmentController = segue.source as? NewDepartmentTableViewController {
+            Department.createDepartment(dep:departmentController.department, postCompleted: { (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
                 }
             })
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "departmentDetail"  {
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tableView.indexPath(for: cell)
+            
+            let nav = segue.destination as! UINavigationController
+            let detailDepartment = nav.topViewController as! DepartmentDetailTableViewController
+            
+            detailDepartment.department = self.departments[indexPath!.row]
+            detailDepartment.depIndex = indexPath
             
         }
     }
-    */
     
-    /*
-    @IBAction func updateToEmployees(_ segue: UIStoryboardSegue) {
-        if let employeeController = segue.source as? EmployeeDetailViewController {
-            Employee.updateEmployee(emp: employeeController.employee, postComleted: {
+    // if cancel is pressed in employee details
+    @IBAction func cancelToDepartments (_ segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func updateToDepartments(_ segue: UIStoryboardSegue) {
+        if let departmentController = segue.source as? DepartmentDetailTableViewController {
+            // kutsutaan department olion funktiota 
+            Department.updateDepartment(dep: departmentController.department, postComleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
@@ -152,6 +188,6 @@ class DepartmentsTableViewController: UITableViewController {
             })
         }
     }
-    */
+ 
 
 }

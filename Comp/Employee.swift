@@ -124,7 +124,7 @@ extension Employee {
         })
     }
     
-    // Tämä asetettava aina sequeUnwindin identifieriksi
+    // Tämä asetettava sequeUnwindin identifieriksi, jotta toimenpiteet tehdaan
     static func updateEmployee(emp: Employee , postComleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "employee/" + emp.id
         Api.write(method:"PUT",

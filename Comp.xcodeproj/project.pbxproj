@@ -20,6 +20,7 @@
 		A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */; };
 		A281B9611E48CFD10095D9F5 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */; };
 		B9C0B9761E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C0B9751E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift */; };
+		B9C0B9791E65E11C00F3CB9B /* NewDepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C0B9781E65E11C00F3CB9B /* NewDepartmentTableViewController.swift */; };
 		B9FDECB31E51FE2500DF1328 /* DepartmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */; };
 		B9FDECB51E51FE8F00DF1328 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */; };
 		B9FDECB71E52000C00DF1328 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDECB61E52000C00DF1328 /* Department.swift */; };
@@ -41,6 +42,7 @@
 		A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEmployeeViewController.swift; sourceTree = "<group>"; };
 		A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
 		B9C0B9751E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentDetailTableViewController.swift; sourceTree = "<group>"; };
+		B9C0B9781E65E11C00F3CB9B /* NewDepartmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDepartmentTableViewController.swift; sourceTree = "<group>"; };
 		B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentsTableViewController.swift; sourceTree = "<group>"; };
 		B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		B9FDECB61E52000C00DF1328 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -76,9 +78,12 @@
 		A2117DF11E36447F00234CC8 /* Comp */ = {
 			isa = PBXGroup;
 			children = (
+				B9C0B9771E65DE1700F3CB9B /* Project */,
 				B9FDECB11E51FC8000DF1328 /* Department */,
 				B9FDECB01E51FBE700DF1328 /* Employee */,
 				A2117E081E364B3E00234CC8 /* Api.swift */,
+				A27BE66E1E3F8588007F6366 /* HomeViewController.swift */,
+				A2117DF21E36447F00234CC8 /* AppDelegate.swift */,
 				A2117DF61E36447F00234CC8 /* Main.storyboard */,
 				A27BE6701E3F9299007F6366 /* Cache.swift */,
 				A2117DF91E36447F00234CC8 /* Assets.xcassets */,
@@ -88,16 +93,21 @@
 			path = Comp;
 			sourceTree = "<group>";
 		};
+		B9C0B9771E65DE1700F3CB9B /* Project */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
 		B9FDECB01E51FBE700DF1328 /* Employee */ = {
 			isa = PBXGroup;
 			children = (
-				A2117DF21E36447F00234CC8 /* AppDelegate.swift */,
 				A2117E061E3645B300234CC8 /* Employee.swift */,
-				A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */,
-				A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */,
-				A27BE66E1E3F8588007F6366 /* HomeViewController.swift */,
 				A2117E041E3644B500234CC8 /* EmployeesViewController.swift */,
+				A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */,
 				A2117E0A1E3658CA00234CC8 /* EmployeeCell.swift */,
+				A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */,
 			);
 			name = Employee;
 			sourceTree = "<group>";
@@ -105,10 +115,11 @@
 		B9FDECB11E51FC8000DF1328 /* Department */ = {
 			isa = PBXGroup;
 			children = (
-				B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */,
-				B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */,
 				B9FDECB61E52000C00DF1328 /* Department.swift */,
+				B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */,
 				B9C0B9751E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift */,
+				B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */,
+				B9C0B9781E65E11C00F3CB9B /* NewDepartmentTableViewController.swift */,
 			);
 			name = Department;
 			sourceTree = "<group>";
@@ -194,6 +205,7 @@
 				A2117E091E364B3E00234CC8 /* Api.swift in Sources */,
 				A2117DF31E36447F00234CC8 /* AppDelegate.swift in Sources */,
 				A2117E0B1E3658CA00234CC8 /* EmployeeCell.swift in Sources */,
+				B9C0B9791E65E11C00F3CB9B /* NewDepartmentTableViewController.swift in Sources */,
 				B9FDECB31E51FE2500DF1328 /* DepartmentsTableViewController.swift in Sources */,
 				B9FDECB51E51FE8F00DF1328 /* DepartmentTableViewCell.swift in Sources */,
 				A27BE66F1E3F8588007F6366 /* HomeViewController.swift in Sources */,
