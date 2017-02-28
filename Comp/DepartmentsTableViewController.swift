@@ -120,5 +120,38 @@ class DepartmentsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // if cancel is pressed in employee details
+    @IBAction func cancelToDepartments (_ segue: UIStoryboardSegue) {
+        
+    }
+
+    /*
+    // if Done is pressed in employee details
+    @IBAction func saveToEmployees(_ segue:UIStoryboardSegue) {
+        
+        if let employeeController = segue.source as? NewEmployeeViewController {
+            Employee.createEmployee(emp:employeeController.employee, postCompleted: { (succeeded, msg) -> () in
+                if succeeded {
+                    self.loadData()
+                }
+            })
+            
+        }
+    }
+    */
+    
+    /*
+    @IBAction func updateToEmployees(_ segue: UIStoryboardSegue) {
+        if let employeeController = segue.source as? EmployeeDetailViewController {
+            Employee.updateEmployee(emp: employeeController.employee, postComleted: {
+                (succeeded, msg) -> () in
+                if succeeded {
+                    self.loadData()
+                }
+            })
+        }
+    }
+    */
 
 }

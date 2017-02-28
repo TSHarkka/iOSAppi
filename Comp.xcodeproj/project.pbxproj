@@ -19,6 +19,7 @@
 		A27BE6711E3F9299007F6366 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27BE6701E3F9299007F6366 /* Cache.swift */; };
 		A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */; };
 		A281B9611E48CFD10095D9F5 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */; };
+		B9C0B9761E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C0B9751E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift */; };
 		B9FDECB31E51FE2500DF1328 /* DepartmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */; };
 		B9FDECB51E51FE8F00DF1328 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */; };
 		B9FDECB71E52000C00DF1328 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDECB61E52000C00DF1328 /* Department.swift */; };
@@ -39,6 +40,7 @@
 		A27BE6701E3F9299007F6366 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEmployeeViewController.swift; sourceTree = "<group>"; };
 		A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
+		B9C0B9751E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentDetailTableViewController.swift; sourceTree = "<group>"; };
 		B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentsTableViewController.swift; sourceTree = "<group>"; };
 		B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		B9FDECB61E52000C00DF1328 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				B9FDECB21E51FE2500DF1328 /* DepartmentsTableViewController.swift */,
 				B9FDECB41E51FE8F00DF1328 /* DepartmentTableViewCell.swift */,
 				B9FDECB61E52000C00DF1328 /* Department.swift */,
+				B9C0B9751E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift */,
 			);
 			name = Department;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				A2117E051E3644B500234CC8 /* EmployeesViewController.swift in Sources */,
 				A2117E071E3645B300234CC8 /* Employee.swift in Sources */,
 				A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */,
+				B9C0B9761E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift in Sources */,
 				A2117E091E364B3E00234CC8 /* Api.swift in Sources */,
 				A2117DF31E36447F00234CC8 /* AppDelegate.swift in Sources */,
 				A2117E0B1E3658CA00234CC8 /* EmployeeCell.swift in Sources */,
