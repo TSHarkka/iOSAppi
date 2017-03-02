@@ -2,49 +2,21 @@ import Foundation
 
 struct Project {
     var id: String
-    var fname: String?
-    var lname: String?
-    var salary: Double?
-    var bdate: String?
-    var email: String?
-    var dep: String?
-    var dname: String?
-    var phone1: String?
-    var phone2: String?
-    var image: String?
+    var pname: String?
 }
 
 extension Project {
     init() {
         self.id = ""
-        self.fname = ""
-        self.lname = ""
-        self.salary = 0.0
-        self.bdate = ""
-        self.email = ""
-        self.dep = ""
-        self.dname=""
-        self.phone1=""
-        self.phone2=""
-        self.image=""
+        self.pname = ""
     }
 }
 
 extension Project {
     init?(json: [String: Any]) {
         self.id = (json["id"] as? String)!
-        self.fname = json["fname"] as? String ?? ""
-        self.lname = json["lname"] as? String ?? ""
-        let tmpSalary = json["salary"] as? String ?? "0.0"
-        self.salary = Double(tmpSalary)
-        self.bdate = json["bdate"] as? String ?? ""
-        self.email = json["email"] as? String ?? ""
-        self.dep = json["dep"] as? String ?? ""
-        self.dname = json["dname"] as? String ?? ""
-        self.phone1 = json["phone1"] as? String ?? ""
-        self.phone2 = json["phone2"] as? String ?? ""
-        self.image = json["image"] as? String ?? ""
-    }
+        self.pname = json["pname"] as? String ?? ""
+        }
 }
 
 extension Project {
@@ -76,7 +48,6 @@ extension Project {
             }
             completion(projects)
         }
-        
     }
     
     static func deleteProject(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
@@ -96,15 +67,7 @@ extension Project {
     static func createProject(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
         let createUrl = "project"
         Api.write(method: "POST",
-                  body:["fname":proj.fname!,
-                        "lname":proj.lname!,
-                        "salary":proj.salary!,
-                        "bdate":proj.bdate!,
-                        "email":proj.email!,
-                        "dep":proj.dep!,
-                        "phone1":proj.phone1!,
-                        "phone2":proj.phone2!,
-                        "image":proj.image!]
+                  body:["pname":proj.pname!]
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
@@ -121,15 +84,7 @@ extension Project {
     static func updateProject(proj: Project , postComleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "project/" + proj.id
         Api.write(method:"PUT",
-                  body:["fname":proj.fname!,
-                        "lname":proj.lname!,
-                        "salary":proj.salary!,
-                        "bdate":proj.bdate!,
-                        "email":proj.email!,
-                        "dep":proj.dep!,
-                        "phone1":proj.phone1!,
-                        "phone2":proj.phone2!,
-                        "image":proj.image!]
+                  body:["pname":proj.pname!]
             ,postUrl:updateUrl, postCompleted: { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {

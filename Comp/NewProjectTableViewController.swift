@@ -2,15 +2,9 @@ import UIKit
 
 class NewProjectTableViewController: UITableViewController {
     
-    @IBOutlet weak var id: UILabel!
-    @IBOutlet weak var fname: UITextField!
-    @IBOutlet weak var lname: UITextField!
-    @IBOutlet weak var bdate: UITextField!
-    @IBOutlet weak var dep: UITextField!
-    @IBOutlet weak var salary: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var phone1: UITextField!
-    @IBOutlet weak var phone2: UITextField!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var pnameText: UITextField!
+
     
     var project: Project! = Project()
     override func viewDidLoad() {
@@ -37,14 +31,7 @@ class NewProjectTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "saveToProjects" {
-            project.fname = self.fname.text!
-            project.lname = self.lname.text!
-            project.dep = self.dep.text!
-            project.bdate = self.bdate.text!
-            project.email = self.email.text!
-            project.salary = Double(self.salary.text!) ?? 0.0
-            project.phone1 = self.phone1.text!
-            project.phone2 = self.phone2.text!
+            project.pname = self.pnameText.text!
         }
     }
     

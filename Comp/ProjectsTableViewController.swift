@@ -83,9 +83,7 @@ class ProjectsTableViewController: UITableViewController {
                 print ("delete proj " + msg)
                 
                 if succeeded {
-                    
                     self.projects.remove(at: indexPath.row)
-                    
                 }
                 // update ui
                 DispatchQueue.main.async(execute: {
@@ -121,10 +119,9 @@ class ProjectsTableViewController: UITableViewController {
             let indexPath = self.tableView.indexPath(for: cell)
             
             let nav = segue.destination as! UINavigationController
-            let detailProject = nav.topViewController as! ProjectDetailTableViewController
-            
+            let detailProject = nav.topViewController as! ProjectDetailTableViewController            
             detailProject.project = self.projects[indexPath!.row]
-            detailProject.empIndex = indexPath
+            detailProject.projIndex = indexPath
             
         }
     }

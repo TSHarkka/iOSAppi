@@ -106,11 +106,11 @@
 		B9C0B9771E65DE1700F3CB9B /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				B95600C01E6885C300222679 /* NewProjectTableViewController.swift */,
 				B95600C11E6885C300222679 /* Project.swift */,
-				B95600C21E6885C300222679 /* ProjectCell.swift */,
-				B95600C31E6885C300222679 /* ProjectDetailTableViewController.swift */,
 				B95600C41E6885C300222679 /* ProjectsTableViewController.swift */,
+				B95600C31E6885C300222679 /* ProjectDetailTableViewController.swift */,
+				B95600C21E6885C300222679 /* ProjectCell.swift */,
+				B95600C01E6885C300222679 /* NewProjectTableViewController.swift */,
 			);
 			name = Project;
 			sourceTree = "<group>";

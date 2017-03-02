@@ -1,18 +1,17 @@
 import UIKit
 
 class ProjectCell: UITableViewCell {
-    @IBOutlet weak var fname: UILabel!
-    @IBOutlet weak var lname: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var placeholderImageView: UIImageView!
+    @IBOutlet weak var pnameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     
     // https://home.tamk.fi/~poypek/iosapi24/images/projects/m10.png
     
     var project: Project! {
         didSet {
-            fname.text = project.fname!
-            lname.text = project.lname!
+            idLabel.text = project.id
+            pnameLabel.text = project.pname!
             
+            /*
             if let empImg = project?.image {
                 let imageUrl = URL(string: Api.companyImageUrl + empImg)
                 
@@ -38,6 +37,7 @@ class ProjectCell: UITableViewCell {
                 self.avatarImageView.alpha = 0
                 self.placeholderImageView.alpha = 1
             }
+            */
         }
     }
     
