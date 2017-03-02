@@ -1,11 +1,3 @@
-//
-//  EmployeesViewController.swift
-//  Comp
-//
-//  Created by Pekka Pöyry on 23.01.17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import UIKit
 
 class ProjectsTableViewController: UITableViewController {
@@ -15,7 +7,7 @@ class ProjectsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.addTarget(self, action: #selector(EmployeesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(ProjectsTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         self.loadData()
     }
     
@@ -32,7 +24,7 @@ class ProjectsTableViewController: UITableViewController {
     }
     
     func loadData() -> Void {
-        Project.getEmployees { (projects) in
+        Project.getProjects { (projects) in
             self.projects = projects
             print("proj: ")
             print(self.projects)
@@ -63,7 +55,7 @@ class ProjectsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
         
         let project = projects[indexPath.row] as Project
         cell.project = project
@@ -87,7 +79,7 @@ class ProjectsTableViewController: UITableViewController {
             // Delete the row from the data source
             
             let proj = self.projects[indexPath.row]
-            Project.deleteEmployee(proj: proj, postCompleted: { (succeeded, msg) -> () in
+            Project.deleteProject(proj: proj, postCompleted: { (succeeded, msg) -> () in
                 print ("delete proj " + msg)
                 
                 if succeeded {
@@ -123,30 +115,30 @@ class ProjectsTableViewController: UITableViewController {
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "employeeDetail"  {
+        if segue.identifier == "projectDetail"  {
             
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView.indexPath(for: cell)
             
             let nav = segue.destination as! UINavigationController
-            let detailEmployee = nav.topViewController as! EmployeeDetailViewController
+            let detailProject = nav.topViewController as! ProjectDetailTableViewController
             
-            detailEmployee.project = self.projects[indexPath!.row]
-            detailEmployee.empIndex = indexPath
+            detailProject.project = self.projects[indexPath!.row]
+            detailProject.empIndex = indexPath
             
         }
     }
     
     // if cancel is pressed in project details
-    @IBAction func cancelToEmployees (_ segue: UIStoryboardSegue) {
+    @IBAction func cancelToProjects (_ segue: UIStoryboardSegue) {
         
     }
     
     // if Done is pressed in project details
-    @IBAction func saveToEmployees(_ segue:UIStoryboardSegue) {
+    @IBAction func saveToProjects(_ segue:UIStoryboardSegue) {
         
-        if let employeeController = segue.source as? NewEmployeeViewController {
-            Project.createEmployee(proj:employeeController.project, postCompleted: { (succeeded, msg) -> () in
+        if let projectController = segue.source as? NewProjectTableViewController {
+            Project.createProject(proj:projectController.project, postCompleted: { (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
                 }
@@ -155,9 +147,9 @@ class ProjectsTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func updateToEmployees(_ segue: UIStoryboardSegue) {
-        if let employeeController = segue.source as? EmployeeDetailViewController {
-            Project.updateEmployee(proj: employeeController.project, postComleted: {
+    @IBAction func updateToProjects(_ segue: UIStoryboardSegue) {
+        if let projectController = segue.source as? ProjectDetailTableViewController {
+            Project.updateProject(proj: projectController.project, postComleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()

@@ -1,11 +1,3 @@
-//
-//  Api.swift
-//  Company
-//
-//  Created by Pekka Pöyry on 03.01.17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-
-
 import Foundation
 
 struct Api {

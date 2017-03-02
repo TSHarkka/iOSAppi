@@ -1,11 +1,3 @@
-//
-//  NewDepartmentTableViewController.swift
-//  Comp
-//
-//  Created by Tommi Seppä on 28/02/17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import UIKit
 
 class NewDepartmentTableViewController: UITableViewController {

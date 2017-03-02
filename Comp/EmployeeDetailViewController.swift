@@ -1,11 +1,3 @@
-//
-//  EmployeeDetailViewController.swift
-//  Comp
-//
-//  Created by Pekka Pöyry on 06.02.17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import UIKit
 
 class EmployeeDetailViewController: UITableViewController {

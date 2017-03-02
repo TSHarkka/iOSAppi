@@ -1,11 +1,3 @@
-//
-//  EmployeeDetailViewController.swift
-//  Comp
-//
-//  Created by Pekka Pöyry on 06.02.17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import UIKit
 
 class NewProjectTableViewController: UITableViewController {
@@ -44,7 +36,7 @@ class NewProjectTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "saveToEmployees" {
+        if segue.identifier == "saveToProjects" {
             project.fname = self.fname.text!
             project.lname = self.lname.text!
             project.dep = self.dep.text!

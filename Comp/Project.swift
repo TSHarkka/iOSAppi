@@ -1,10 +1,3 @@
-//  Project.swift
-//  Company
-//
-//  Created by Pekka Pöyry on 02.01.17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import Foundation
 
 struct Project {
@@ -56,7 +49,7 @@ extension Project {
 
 extension Project {
     
-    static func getEmployees(completion: @escaping ([Project]) -> Void) {
+    static func getProjects(completion: @escaping ([Project]) -> Void) {
         var projects: [Project] = []
         let getUrl = "projects"
         
@@ -69,9 +62,9 @@ extension Project {
                 do {
                     
                     let parsedData = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
-                    let employeesData = parsedData["data"] as! [[String:Any]]
+                    let projectsData = parsedData["data"] as! [[String:Any]]
                     
-                    for case let result in employeesData {
+                    for case let result in projectsData {
                         if let project = Project(json: result) {
                             projects.append(project)
                         }
@@ -86,7 +79,7 @@ extension Project {
         
     }
     
-    static func deleteEmployee(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
+    static func deleteProject(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
         let deleteUrl = "project/" + proj.id
         Api.write(method: "DELETE", body:[:],postUrl:deleteUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
             
@@ -100,7 +93,7 @@ extension Project {
         })
     }
     
-    static func createEmployee(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
+    static func createProject(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
         let createUrl = "project"
         Api.write(method: "POST",
                   body:["fname":proj.fname!,
@@ -125,7 +118,7 @@ extension Project {
     }
     
     // Tämä asetettava sequeUnwindin identifieriksi, jotta toimenpiteet tehdaan
-    static func updateEmployee(proj: Project , postComleted : @escaping (Bool, String) -> Void) {
+    static func updateProject(proj: Project , postComleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "project/" + proj.id
         Api.write(method:"PUT",
                   body:["fname":proj.fname!,

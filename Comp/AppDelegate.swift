@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Comp
-//
-//  Created by Pekka Pöyry on 23.01.17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

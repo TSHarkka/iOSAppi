@@ -1,11 +1,3 @@
-//
-//  DepartmentTableViewCell.swift
-//  Comp
-//
-//  Created by Tommi Seppä on 13/02/17.
-//  Copyright © 2017 Pekka Pöyry. All rights reserved.
-//
-
 import UIKit
 
 class DepartmentTableViewCell: UITableViewCell {
