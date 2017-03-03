@@ -19,6 +19,11 @@
 		A27BE6711E3F9299007F6366 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27BE6701E3F9299007F6366 /* Cache.swift */; };
 		A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */; };
 		A281B9611E48CFD10095D9F5 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */; };
+		B94F83D61E69BB4500F3933C /* NewTeamMemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D11E69BB4500F3933C /* NewTeamMemberTableViewController.swift */; };
+		B94F83D71E69BB4500F3933C /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D21E69BB4500F3933C /* TeamMember.swift */; };
+		B94F83D81E69BB4500F3933C /* TeamMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D31E69BB4500F3933C /* TeamMemberCell.swift */; };
+		B94F83D91E69BB4500F3933C /* TeamMemberDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D41E69BB4500F3933C /* TeamMemberDetailTableViewController.swift */; };
+		B94F83DA1E69BB4500F3933C /* TeamMemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D51E69BB4500F3933C /* TeamMemberTableViewController.swift */; };
 		B95600C51E6885C300222679 /* NewProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95600C01E6885C300222679 /* NewProjectTableViewController.swift */; };
 		B95600C61E6885C300222679 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95600C11E6885C300222679 /* Project.swift */; };
 		B95600C71E6885C300222679 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95600C21E6885C300222679 /* ProjectCell.swift */; };
@@ -46,6 +51,11 @@
 		A27BE6701E3F9299007F6366 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEmployeeViewController.swift; sourceTree = "<group>"; };
 		A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
+		B94F83D11E69BB4500F3933C /* NewTeamMemberTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTeamMemberTableViewController.swift; sourceTree = "<group>"; };
+		B94F83D21E69BB4500F3933C /* TeamMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
+		B94F83D31E69BB4500F3933C /* TeamMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberCell.swift; sourceTree = "<group>"; };
+		B94F83D41E69BB4500F3933C /* TeamMemberDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberDetailTableViewController.swift; sourceTree = "<group>"; };
+		B94F83D51E69BB4500F3933C /* TeamMemberTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewController.swift; sourceTree = "<group>"; };
 		B95600C01E6885C300222679 /* NewProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectTableViewController.swift; sourceTree = "<group>"; };
 		B95600C11E6885C300222679 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		B95600C21E6885C300222679 /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
@@ -103,9 +113,22 @@
 			path = Comp;
 			sourceTree = "<group>";
 		};
+		B94F83D01E69BA3300F3933C /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				B94F83D11E69BB4500F3933C /* NewTeamMemberTableViewController.swift */,
+				B94F83D21E69BB4500F3933C /* TeamMember.swift */,
+				B94F83D31E69BB4500F3933C /* TeamMemberCell.swift */,
+				B94F83D41E69BB4500F3933C /* TeamMemberDetailTableViewController.swift */,
+				B94F83D51E69BB4500F3933C /* TeamMemberTableViewController.swift */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
 		B9C0B9771E65DE1700F3CB9B /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				B94F83D01E69BA3300F3933C /* Team */,
 				B95600C11E6885C300222679 /* Project.swift */,
 				B95600C41E6885C300222679 /* ProjectsTableViewController.swift */,
 				B95600C31E6885C300222679 /* ProjectDetailTableViewController.swift */,
@@ -214,13 +237,18 @@
 				A27BE6711E3F9299007F6366 /* Cache.swift in Sources */,
 				B95600C51E6885C300222679 /* NewProjectTableViewController.swift in Sources */,
 				A2117E051E3644B500234CC8 /* EmployeesViewController.swift in Sources */,
+				B94F83D91E69BB4500F3933C /* TeamMemberDetailTableViewController.swift in Sources */,
 				B95600C91E6885C300222679 /* ProjectsTableViewController.swift in Sources */,
+				B94F83D81E69BB4500F3933C /* TeamMemberCell.swift in Sources */,
 				A2117E071E3645B300234CC8 /* Employee.swift in Sources */,
 				B95600C81E6885C300222679 /* ProjectDetailTableViewController.swift in Sources */,
 				A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */,
 				B9C0B9761E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift in Sources */,
 				A2117E091E364B3E00234CC8 /* Api.swift in Sources */,
+				B94F83D71E69BB4500F3933C /* TeamMember.swift in Sources */,
 				A2117DF31E36447F00234CC8 /* AppDelegate.swift in Sources */,
+				B94F83D61E69BB4500F3933C /* NewTeamMemberTableViewController.swift in Sources */,
+				B94F83DA1E69BB4500F3933C /* TeamMemberTableViewController.swift in Sources */,
 				A2117E0B1E3658CA00234CC8 /* EmployeeCell.swift in Sources */,
 				B9C0B9791E65E11C00F3CB9B /* NewDepartmentTableViewController.swift in Sources */,
 				B9FDECB31E51FE2500DF1328 /* DepartmentsTableViewController.swift in Sources */,

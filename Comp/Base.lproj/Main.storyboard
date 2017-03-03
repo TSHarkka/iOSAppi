@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -132,6 +131,9 @@
                                             <rect key="frame" x="315" y="7" width="41" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="TEAM"/>
+                                            <connections>
+                                                <segue destination="yPN-xf-Vvj" kind="presentation" id="h38-DG-8Wd"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -389,7 +391,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="St5-SZ-cIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WZM-Ly-feH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2687.1999999999998" y="669.71514242878561"/>
+            <point key="canvasLocation" x="2690" y="566"/>
         </scene>
         <!--ProjectDetail-->
         <scene sceneID="F7r-Fo-0BX">
@@ -596,26 +598,17 @@
                             <outlet property="delegate" destination="pQv-OT-Ezh" id="nvX-GU-fsB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Details" id="eeI-tx-z0h">
+                    <navigationItem key="navigationItem" title="Project Details" id="eeI-tx-z0h">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7LP-4s-af8">
                             <connections>
                                 <segue destination="KV4-Oi-Lhn" kind="unwind" unwindAction="cancelToProjects:" id="8Vw-jg-TIJ"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem style="plain" id="LiA-UO-uD0">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XCT-h4-eEz">
-                                    <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="TEAM"/>
-                                </button>
-                            </barButtonItem>
-                            <barButtonItem systemItem="done" id="zY3-pF-dC0">
-                                <connections>
-                                    <segue destination="KV4-Oi-Lhn" kind="unwind" unwindAction="updateToProjects:" id="QEO-w6-JOz"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zY3-pF-dC0">
+                            <connections>
+                                <segue destination="KV4-Oi-Lhn" kind="unwind" unwindAction="updateToProjects:" id="QEO-w6-JOz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="fnameText" destination="8zy-BI-Ow5" id="XvG-7Q-VTl"/>
@@ -628,38 +621,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGG-km-JR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KV4-Oi-Lhn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2650.4000000000001" y="1431.6341829085459"/>
+            <point key="canvasLocation" x="2689" y="1330"/>
         </scene>
         <!--AddToProject-->
         <scene sceneID="DwS-nf-NHE">
             <objects>
                 <tableViewController title="AddToProject" id="hKj-EY-Lck" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8t3-Cx-3O7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" id="8t3-Cx-3O7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="96y-SX-45J">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamMemberCell" rowHeight="101" id="96y-SX-45J" customClass="TeamMemberCell" customModule="Comp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="96y-SX-45J" id="z6H-QV-Vag">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="flE-yb-35t">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="flE-yb-35t" id="Qhg-Rq-2id">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1v0-zd-QVm">
-                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1v0-zd-QVm" id="qFD-DQ-SbI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -677,7 +654,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLL-M9-5AN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4562" y="1435"/>
+            <point key="canvasLocation" x="2688.5" y="2193.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tY6-GW-ZKz">
@@ -693,7 +670,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYD-GF-rQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612" y="1435"/>
+            <point key="canvasLocation" x="1700" y="2195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YH1-44-Xd3">
@@ -709,7 +686,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVq-Cq-mJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="1432"/>
+            <point key="canvasLocation" x="1700" y="1330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N0k-8k-fuh">
@@ -725,7 +702,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hv6-z9-mFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="671"/>
+            <point key="canvasLocation" x="1700" y="567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YFC-af-03m">

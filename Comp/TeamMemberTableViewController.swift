@@ -1,8 +1,8 @@
 import UIKit
 
-class EmployeesViewController: UITableViewController {
+class TeamMemberTableViewController: UITableViewController {
     
-    var employees: [Employee] = []
+    var teamMembers: [TeamMember] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,14 @@ class EmployeesViewController: UITableViewController {
     }
     
     func loadData() -> Void {
-        Employee.getEmployees { (employees) in
-            self.employees = employees
-            print("emp: ")
-            print(self.employees)
+        TeamMember.getTeamMembers { (teamMembers) in
+            self.teamMembers = teamMembers
+            print("tmem: ")
+            print(self.teamMembers)
             
             DispatchQueue.main.async(execute: {
-                print("emp: ")
-                print(self.employees.count)
+                print("tmem: ")
+                print(self.teamMembers.count)
                 self.tableView.reloadData()
                 
             })
@@ -50,15 +50,15 @@ class EmployeesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return employees.count
+        return teamMembers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamMemberDetailTableViewCell", for: indexPath) as! TeamMemberCell
         
-        let employee = employees[indexPath.row] as Employee
-        cell.employee = employee
+        let teamMember = teamMembers[indexPath.row] as TeamMember
+        cell.teamMember = teamMember
         
         return cell;
     }
@@ -78,13 +78,13 @@ class EmployeesViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             
-            let emp = self.employees[indexPath.row]
-            Employee.deleteEmployee(emp: emp, postCompleted: { (succeeded, msg) -> () in
-                print ("delete emp " + msg)
+            let tmem = self.teamMembers[indexPath.row]
+            TeamMember.deleteTeamMember(tmem: tmem, postCompleted: { (succeeded, msg) -> () in
+                print ("delete tmem " + msg)
                 
                 if succeeded {
                     
-                    self.employees.remove(at: indexPath.row)
+                    self.teamMembers.remove(at: indexPath.row)
                     
                 }
                 // update ui
@@ -115,30 +115,30 @@ class EmployeesViewController: UITableViewController {
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "employeeDetail"  {
+        if segue.identifier == "TeamMemberDetail"  {
             
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView.indexPath(for: cell)
             
             let nav = segue.destination as! UINavigationController
-            let detailEmployee = nav.topViewController as! EmployeeDetailViewController
+            let detailTeamMember = nav.topViewController as! TeamMemberDetailTableViewController
             
-            detailEmployee.employee = self.employees[indexPath!.row]
-            detailEmployee.empIndex = indexPath
+            detailTeamMember.teamMember = self.teamMembers[indexPath!.row]
+            detailTeamMember.tmemIndex = indexPath
             
         }
     }
     
-    // if cancel is pressed in employee details
-    @IBAction func cancelToEmployees (_ segue: UIStoryboardSegue) {
+    // if cancel is pressed in teamMember details
+    @IBAction func cancelToTeamMembers (_ segue: UIStoryboardSegue) {
         
     }
     
-    // if Done is pressed in employee details
-    @IBAction func saveToEmployees(_ segue:UIStoryboardSegue) {
+    // if Done is pressed in teamMember details
+    @IBAction func saveToTeamMembers(_ segue:UIStoryboardSegue) {
         
-        if let EmployeeController = segue.source as? NewEmployeeViewController {
-            Employee.createEmployee(emp:EmployeeController.employee, postCompleted: { (succeeded, msg) -> () in
+        if let teamMemberController = segue.source as? NewTeamMemberTableViewController {
+            TeamMember.createTeamMember(tmem:teamMemberController.teamMember, postCompleted: { (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
                 }
@@ -147,9 +147,9 @@ class EmployeesViewController: UITableViewController {
         }
     }
     
-    @IBAction func updateToEmployees(_ segue: UIStoryboardSegue) {
-        if let employeeController = segue.source as? EmployeeDetailViewController {
-            Employee.updateEmployee(emp: employeeController.employee, postComleted: {
+    @IBAction func updateToTeamMembers(_ segue: UIStoryboardSegue) {
+        if let teamMemberController = segue.source as? TeamMemberDetailTableViewController {
+            TeamMember.updateTeamMember(tmem: teamMemberController.teamMember, postComleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
