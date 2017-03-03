@@ -4,6 +4,9 @@ class ProjectDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var pnameText: UITextField!
+    @IBOutlet weak var midText: UITextField!
+    @IBOutlet weak var fnameText: UITextField!
+    @IBOutlet weak var lnameText: UITextField!
 
     
     var project: Project! = Project()
@@ -14,6 +17,10 @@ class ProjectDetailTableViewController: UITableViewController {
         
         self.idLabel.text = self.project.id
         self.pnameText.text = self.project.pname
+        self.midText.text = self.project.mid
+        self.fnameText.text = self.project.fname
+        self.lnameText.text = self.project.lname
+
         
         /*
         let imgName: String = Api.companyImageUrl + self.project.image!
@@ -42,12 +49,12 @@ class ProjectDetailTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
         if segue.identifier == "updateToProjects" {
             project.pname = self.pnameText.text!
+            project.mid = self.midText.text!
+            project.fname = self.fnameText.text!
+            project.lname = self.lnameText.text!
         }
     }
-    
 }
-
-
-

@@ -74,10 +74,10 @@ extension Department {
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "Dep Add Success!")
+                    print( "DEP ADD Success!")
                 }
                 else {
-                    print(" Dep Add Failed!")
+                    print("DEP ADD Failed!")
                 }
                 postCompleted (succeeded, msg)
         })

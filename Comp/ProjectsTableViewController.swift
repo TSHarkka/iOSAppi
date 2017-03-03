@@ -26,12 +26,12 @@ class ProjectsTableViewController: UITableViewController {
     func loadData() -> Void {
         Project.getProjects { (projects) in
             self.projects = projects
-            print("proj: ")
+            print("\n proj: ")
             print(self.projects)
             
             DispatchQueue.main.async(execute: {
                 print("proj: ")
-                print(self.projects.count)
+                print(self.projects.count, "\n")
                 self.tableView.reloadData()
                 
             })
@@ -154,8 +154,4 @@ class ProjectsTableViewController: UITableViewController {
             })
         }
     }
-
-    
-    
-    
 }

@@ -3,12 +3,19 @@ import Foundation
 struct Project {
     var id: String
     var pname: String?
+    var mid: String?
+    var fname: String?
+    var lname: String?
 }
 
 extension Project {
     init() {
         self.id = ""
         self.pname = ""
+        self.mid = ""
+        self.fname = ""
+        self.lname = ""
+
     }
 }
 
@@ -16,6 +23,10 @@ extension Project {
     init?(json: [String: Any]) {
         self.id = (json["id"] as? String)!
         self.pname = json["pname"] as? String ?? ""
+        self.mid = json["mid"] as? String
+        self.fname = json["fname"] as? String
+        self.lname = json["lname"] as? String
+
         }
 }
 
@@ -67,7 +78,10 @@ extension Project {
     static func createProject(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
         let createUrl = "project"
         Api.write(method: "POST",
-                  body:["pname":proj.pname!]
+                  body:["pname":proj.pname!,
+                        "mid":proj.mid!,
+                        "fname":proj.fname!,
+                        "lname":proj.lname!]
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
@@ -84,7 +98,10 @@ extension Project {
     static func updateProject(proj: Project , postComleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "project/" + proj.id
         Api.write(method:"PUT",
-                  body:["pname":proj.pname!]
+                  body:["pname":proj.pname!,
+                        "mid":proj.mid!,
+                        "fname":proj.fname!,
+                        "lname":proj.lname!]
             ,postUrl:updateUrl, postCompleted: { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {

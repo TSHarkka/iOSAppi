@@ -84,10 +84,10 @@ extension Employee {
         Api.write(method: "DELETE", body:[:],postUrl:deleteUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
             
             if(succeeded) {
-                print( "Success!")
+                print( "DELETE Success!")
             }
             else {
-                print("Failed!")
+                print("DELETE Failed!")
             }
             postCompleted (succeeded, msg)
         })
@@ -108,10 +108,10 @@ extension Employee {
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "Success!")
+                    print( "CREATE Success!")
                 }
                 else {
-                    print(" Create Failed!")
+                    print("CREATE Failed!")
                 }
                 postCompleted (succeeded, msg)
         })
@@ -133,10 +133,10 @@ extension Employee {
             ,postUrl:updateUrl, postCompleted: { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "Success!")
+                    print( "UPDATE Success!")
                 }
                 else {
-                    print("Update Failed!")
+                    print("UPDATE Failed!")
                 }
                 postComleted (succeeded, msg)
         })
