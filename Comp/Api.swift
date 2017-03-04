@@ -19,7 +19,7 @@ struct Api {
             }.resume()
     }
     
-    // this handles api create, post, update and delete
+    // this handles api create, post, siikli and delete
     static func write(method: String, body : [String:Any], postUrl : String, postCompleted : @escaping (Bool, String) -> ()) {
         print ("\n" ,body, "\n")
         var request = URLRequest(url: URL(string: self.companyUrl + postUrl)!)

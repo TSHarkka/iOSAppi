@@ -117,7 +117,7 @@ extension Employee {
         })
     }
     // Tämä asetettava sequeUnwindin identifieriksi, jotta toimenpiteet tehdaan
-    static func updateEmployee(emp: Employee , postComleted : @escaping (Bool, String) -> Void) {
+    static func updateEmployee(emp: Employee , postCompleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "employee/" + emp.id
         Api.write(method: "PUT",
                   body:["fname":emp.fname!,
@@ -137,7 +137,7 @@ extension Employee {
                 else {
                     print("UPDATE Failed!")
                 }
-                postComleted (succeeded, msg)
+                postCompleted (succeeded, msg)
         })
     }
 }

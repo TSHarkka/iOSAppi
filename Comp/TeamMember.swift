@@ -39,7 +39,7 @@ extension TeamMember {
     
     static func getTeamMembers(completion: @escaping ([TeamMember]) -> Void) {
         var teamMembers: [TeamMember] = []
-        let getUrl = "projectdetails"
+        let getUrl = "projectdetails/2"
         
         Api.read(getUrl: getUrl) { (data, succeeded, error)
             in
@@ -103,7 +103,7 @@ extension TeamMember {
     }
     
     // Tämä asetettava sequeUnwindin identifieriksi, jotta toimenpiteet tehdaan
-    static func updateTeamMember(tmem: TeamMember , postComleted : @escaping (Bool, String) -> Void) {
+    static func updateTeamMember(tmem: TeamMember , postCompleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "projectdetails/" + tmem.eid
         Api.write(method:"PUT",
                   body:["fname":tmem.fname!,
@@ -120,7 +120,7 @@ extension TeamMember {
                 else {
                     print("UPDATE Failed!")
                 }
-                postComleted (succeeded, msg)
+                postCompleted (succeeded, msg)
         })
     }
 }

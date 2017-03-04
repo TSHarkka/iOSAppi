@@ -5,7 +5,7 @@ class TeamMemberCell: UITableViewCell {
     @IBOutlet weak var lnameText: UILabel!
     @IBOutlet weak var hoursText: UILabel!
     @IBOutlet weak var idText: UILabel!
-    @IBOutlet weak var pnameText: UILabel!
+    //@IBOutlet weak var pnameText: UILabel!
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var placeholderImageView: UIImageView!
@@ -17,9 +17,9 @@ class TeamMemberCell: UITableViewCell {
             lnameText.text = teamMember.lname!
             hoursText.text = String(format: "%.2f", self.teamMember.hours!)
             idText.text = teamMember.id!
-            pnameText.text = teamMember.pname!
+            //pnameText.text = teamMember.pname!
 
-            
+            /*
             if let tmemImg = teamMember?.image {
                 let imageUrl = URL(string: Api.companyImageUrl + tmemImg)
                 
@@ -45,6 +45,7 @@ class TeamMemberCell: UITableViewCell {
                 self.avatarImageView.alpha = 0
                 self.placeholderImageView.alpha = 1
             }
+            */
         }
     }
     

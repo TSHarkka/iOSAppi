@@ -85,10 +85,10 @@ extension Project {
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "Success!")
+                    print( "\n Create Success!\n")
                 }
                 else {
-                    print(" Create Failed!")
+                    print("\nCreate Failed!\n")
                 }
                 postCompleted (succeeded, msg)
         })
@@ -105,10 +105,10 @@ extension Project {
             ,postUrl:updateUrl, postCompleted: { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "Success!")
+                    print( "\n UPDATE Success!\n")
                 }
                 else {
-                    print("Update Failed!")
+                    print("\nUPDATE Failed!\n")
                 }
                 postComleted (succeeded, msg)
         })

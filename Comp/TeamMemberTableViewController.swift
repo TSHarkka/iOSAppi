@@ -55,7 +55,7 @@ class TeamMemberTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamMemberDetailTableViewCell", for: indexPath) as! TeamMemberCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamMemberCell", for: indexPath) as! TeamMemberCell
         
         let teamMember = teamMembers[indexPath.row] as TeamMember
         cell.teamMember = teamMember
@@ -83,9 +83,7 @@ class TeamMemberTableViewController: UITableViewController {
                 print ("delete tmem " + msg)
                 
                 if succeeded {
-                    
                     self.teamMembers.remove(at: indexPath.row)
-                    
                 }
                 // update ui
                 DispatchQueue.main.async(execute: {
@@ -149,7 +147,7 @@ class TeamMemberTableViewController: UITableViewController {
     
     @IBAction func updateToTeamMembers(_ segue: UIStoryboardSegue) {
         if let teamMemberController = segue.source as? TeamMemberDetailTableViewController {
-            TeamMember.updateTeamMember(tmem: teamMemberController.teamMember, postComleted: {
+            TeamMember.updateTeamMember(tmem: teamMemberController.teamMember, postCompleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()

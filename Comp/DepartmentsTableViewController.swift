@@ -172,7 +172,7 @@ class DepartmentsTableViewController: UITableViewController {
     @IBAction func updateToDepartments(_ segue: UIStoryboardSegue) {
         if let departmentController = segue.source as? DepartmentDetailTableViewController {
             // kutsutaan department olion funktiota 
-            Department.updateDepartment(dep: departmentController.department, postComleted: {
+            Department.updateDepartment(dep: departmentController.department, postCompleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()

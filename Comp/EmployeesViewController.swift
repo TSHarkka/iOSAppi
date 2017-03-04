@@ -149,7 +149,7 @@ class EmployeesViewController: UITableViewController {
     
     @IBAction func updateToEmployees(_ segue: UIStoryboardSegue) {
         if let employeeController = segue.source as? EmployeeDetailViewController {
-            Employee.updateEmployee(emp: employeeController.employee, postComleted: {
+            Employee.updateEmployee(emp: employeeController.employee, postCompleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()

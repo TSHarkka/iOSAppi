@@ -67,36 +67,35 @@ extension Department {
     
     static func createDepartment(dep: Department, postCompleted : @escaping (Bool, String) -> Void) {
         let createUrl = "department"
-        
-        // lahetetaan vain nimi, db hoitaa id:n
+        print("\n", String(dep.dname!)!, " mita sviccua\n")
         Api.write(method: "POST",
                   body:["dname":dep.dname!]
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "DEP ADD Success!")
+                    print( "CREATE Success!")
                 }
                 else {
-                    print("DEP ADD Failed!")
+                    print("CREATE Failed!")
                 }
                 postCompleted (succeeded, msg)
         })
     }
     
     // Tämä asetettava aina sequeUnwindin identifieriksi
-    static func updateDepartment(dep: Department , postComleted : @escaping (Bool, String) -> Void) {
+    static func updateDepartment(dep: Department , postCompleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "department/" + dep.id
         Api.write(method:"PUT",
                   body:["dname":dep.dname!]
             ,postUrl:updateUrl, postCompleted: { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
-                    print( "Dep Update Success!")
+                    print( "\nDep Update Success!\n")
                 }
                 else {
-                    print("Dep Update Failed!")
+                    print("\nDep Update Failed!\n")
                 }
-                postComleted (succeeded, msg)
+                postCompleted (succeeded, msg)
         })
     }
 }
