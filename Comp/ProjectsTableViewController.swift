@@ -124,9 +124,10 @@ class ProjectsTableViewController: UITableViewController {
             detailProject.projIndex = indexPath
             
         }
-      
+        
       // projectin tietojen lahettaminen teammember nakymalle poista
-      /*if segue.identifier == "passProjectID"  {
+        /*
+      if segue.identifier == "passProjectID"  {
         // haetaan valitun projectin projekti numero ja lahetetaan se TeamMemberTableViewControllerille
          let cell = sender as! UIButton
          let indexPath = self.tableView.indexPath(for: cell)
@@ -136,7 +137,10 @@ class ProjectsTableViewController: UITableViewController {
          detailProject.projIndex = indexPath
       }
       */
+      
     }
+    
+    
  
    
     // if cancel is pressed in project details

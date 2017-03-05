@@ -6,8 +6,8 @@ class WEmployeeCell: UITableViewCell {
     @IBOutlet weak var eidLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var pnameLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var placeholderImageView: UIImageView!
+    //@IBOutlet weak var avatarImageView: UIImageView!
+    //@IBOutlet weak var placeholderImageView: UIImageView!
     
     // https://home.tamk.fi/~poypek/iosapi24/images/wemployees/m10.png
     
@@ -18,7 +18,6 @@ class WEmployeeCell: UITableViewCell {
             eidLabel.text = wemployee.eid
             hoursLabel.text = String(wemployee.hours!)
             pnameLabel.text = wemployee.pname!
-
          
             /*
             if let empImg = wemployee?.image {

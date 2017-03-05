@@ -1,21 +1,13 @@
 import UIKit
 
-class TeamMemberTableViewController: UITableViewController {
+class WProjectsViewController: UITableViewController {
     
-    var teamMembers: [TeamMember] = []
-    
-    var teamMember: TeamMember! = TeamMember()
-    var tmemIndex: IndexPath!
-   
-    // valitun projektin tiedot poista
-    var project: Project! = Project()
-    // projectin polku poista
-    var projIndex: IndexPath!
+    var projects: [Project] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.addTarget(self, action: #selector(EmployeesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(ProjectsTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         self.loadData()
     }
     
@@ -32,14 +24,14 @@ class TeamMemberTableViewController: UITableViewController {
     }
     
     func loadData() -> Void {
-        TeamMember.getTeamMembers { (teamMembers) in
-            self.teamMembers = teamMembers
-            print("tmem: ")
-            print(self.teamMembers)
+        Project.getProjects { (projects) in
+            self.projects = projects
+            print("\nproj: ")
+            print(self.projects)
             
             DispatchQueue.main.async(execute: {
-                print("tmem: ")
-                print(self.teamMembers.count)
+                print("proj: ")
+                print(self.projects.count, "\n")
                 self.tableView.reloadData()
                 
             })
@@ -58,15 +50,15 @@ class TeamMemberTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return teamMembers.count
+        return projects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamMemberCell", for: indexPath) as! TeamMemberCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WProjectCell", for: indexPath) as! WProjectCell
         
-        let teamMember = teamMembers[indexPath.row] as TeamMember
-        cell.teamMember = teamMember
+        let project = projects[indexPath.row] as Project
+        cell.project = project
         
         return cell;
     }
@@ -84,14 +76,14 @@ class TeamMemberTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             
-            let tmem = self.teamMembers[indexPath.row]
-            TeamMember.deleteTeamMember(tmem: tmem, postCompleted: { (succeeded, msg) -> () in
-                print ("delete tmem " + msg)
+            // Delete the row from the data source
+            let proj = self.projects[indexPath.row]
+            Project.deleteProject(proj: proj, postCompleted: { (succeeded, msg) -> () in
+                print ("delete proj " + msg)
                 
                 if succeeded {
-                    self.teamMembers.remove(at: indexPath.row)
+                    self.projects.remove(at: indexPath.row)
                 }
                 // update ui
                 DispatchQueue.main.async(execute: {
@@ -118,33 +110,50 @@ class TeamMemberTableViewController: UITableViewController {
      // Return false if you do not want the item to be re-orderable.
      return true
      }
-     */
+    */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TeamMemberDetail"  {
+        if segue.identifier == "projectDetail"  {
             
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView.indexPath(for: cell)
             
             let nav = segue.destination as! UINavigationController
-            let detailTeamMember = nav.topViewController as! TeamMemberDetailTableViewController
-            
-            detailTeamMember.teamMember = self.teamMembers[indexPath!.row]
-            detailTeamMember.tmemIndex = indexPath
+            let detailProject = nav.topViewController as! WEmployeesViewController
+            detailProject.project = self.projects[indexPath!.row]
+            detailProject.projIndex = indexPath
             
         }
     }
+        /*
+        // projectin tietojen lahettaminen teammember nakymalle poista
+     
+         if segue.identifier == "passProjectID"  {
+         // haetaan valitun projectin projekti numero ja lahetetaan se TeamMemberTableViewControllerille
+         let cell = sender as! UIButton
+         let indexPath = self.tableView.indexPath(for: cell)
+         let nav = segue.destination as! UINavigationController
+         let detailProject = nav.topViewController as! TeamMemberTableViewController
+         detailProject.project = self.projects[indexPath!.row]
+         detailProject.projIndex = indexPath
+         }
+         */
     
-    // if cancel is pressed in teamMember details
-    @IBAction func cancelToTeamMembers (_ segue: UIStoryboardSegue) {
+    
+    
+    
+    
+    // if cancel is pressed in project details
+    @IBAction func cancelToProjects (_ segue: UIStoryboardSegue) {
         
     }
     
-    // if Done is pressed in teamMember details
-    @IBAction func saveToTeamMembers(_ segue:UIStoryboardSegue) {
+    /*
+    // if Done is pressed in project details
+    @IBAction func saveToProjects(_ segue:UIStoryboardSegue) {
         
-        if let teamMemberController = segue.source as? NewTeamMemberTableViewController {
-            TeamMember.createTeamMember(tmem:teamMemberController.teamMember, postCompleted: { (succeeded, msg) -> () in
+        if let projectController = segue.source as? NewProjectTableViewController {
+            Project.createProject(proj:projectController.project, postCompleted: { (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
                 }
@@ -153,9 +162,9 @@ class TeamMemberTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func updateToTeamMembers(_ segue: UIStoryboardSegue) {
-        if let teamMemberController = segue.source as? TeamMemberDetailTableViewController {
-            TeamMember.updateTeamMember(tmem: teamMemberController.teamMember, postCompleted: {
+    @IBAction func updateToProjects(_ segue: UIStoryboardSegue) {
+        if let projectController = segue.source as? ProjectDetailTableViewController {
+            Project.updateProject(proj: projectController.project, postCompleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
@@ -163,8 +172,5 @@ class TeamMemberTableViewController: UITableViewController {
             })
         }
     }
-
-    
-    
-    
+    */
 }

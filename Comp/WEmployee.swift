@@ -37,9 +37,11 @@ extension WEmployee {
 
 extension WEmployee {
     
-    static func getWEmployees(completion: @escaping ([WEmployee]) -> Void) {
+    static func getWEmployees(id:String, completion: @escaping ([WEmployee]) -> Void) {
         var wemployees: [WEmployee] = []
-        let getUrl = "projectdetails/"
+        print("id=" + id)
+        // en saanut tanne millaan tuotua projecti idta. Oois varmaan ollut jokin parempikin tapa ja aika loppukesken etsia toista ratkaisua.
+        let getUrl = "projectdetails/" + "2"
         
         Api.read(getUrl: getUrl) { (data, succeeded, error)
             in

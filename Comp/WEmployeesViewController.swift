@@ -3,10 +3,15 @@ import UIKit
 class WEmployeesViewController: UITableViewController {
     
     var wemployees: [WEmployee] = []
+    var project: Project! = Project()
+    var projIndex: IndexPath!
+    var pid: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("project =" , self.project , "\n")
+        self.pid = self.project.id
         self.refreshControl?.addTarget(self, action: #selector(WEmployeesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         self.loadData()
     }
@@ -24,7 +29,8 @@ class WEmployeesViewController: UITableViewController {
     }
     
     func loadData() -> Void {
-        WEmployee.getWEmployees { (wemployees) in
+        print("pid=" + pid + "\n")
+        WEmployee.getWEmployees(id:pid) {(wemployees) in
             self.wemployees = wemployees
             print("wemp: ")
             print(self.wemployees)
@@ -112,8 +118,7 @@ class WEmployeesViewController: UITableViewController {
      // Return false if you do not want the item to be re-orderable.
      return true
      }
-     */
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "wemployeeDetail"  {
             
@@ -128,9 +133,10 @@ class WEmployeesViewController: UITableViewController {
             
         }
     }
+    */
     
     // if cancel is pressed in wemployee details
-    @IBAction func cancelToWEmployees (_ segue: UIStoryboardSegue) {
+    @IBAction func cancelToProject (_ segue: UIStoryboardSegue) {
         
     }
     
