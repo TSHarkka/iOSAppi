@@ -53,8 +53,6 @@ class ProjectDetailTableViewController: UITableViewController {
         if segue.identifier == "updateToProjects" {
             project.pname = self.pnameText.text!
             project.mid = self.midText.text!
-            project.fname = self.fnameText.text!
-            project.lname = self.lnameText.text!
         }
     }
 }

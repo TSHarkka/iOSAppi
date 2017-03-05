@@ -78,10 +78,7 @@ extension Project {
     static func createProject(proj: Project, postCompleted : @escaping (Bool, String) -> Void) {
         let createUrl = "project"
         Api.write(method: "POST",
-                  body:["pname":proj.pname!,
-                        "mid":proj.mid!,
-                        "fname":proj.fname!,
-                        "lname":proj.lname!]
+                  body:["pname":proj.pname!, "mid":proj.mid!]
             ,postUrl:createUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
@@ -95,13 +92,11 @@ extension Project {
     }
     
     // Tämä asetettava sequeUnwindin identifieriksi, jotta toimenpiteet tehdaan
-    static func updateProject(proj: Project , postComleted : @escaping (Bool, String) -> Void) {
+    static func updateProject(proj: Project , postCompleted : @escaping (Bool, String) -> Void) {
         let updateUrl = "project/" + proj.id
+        print("\n", proj, "\n")
         Api.write(method:"PUT",
-                  body:["pname":proj.pname!,
-                        "mid":proj.mid!,
-                        "fname":proj.fname!,
-                        "lname":proj.lname!]
+                  body:["pname":proj.pname!, "mid":proj.mid!]
             ,postUrl:updateUrl, postCompleted: { (succeeded: Bool, msg: String) -> () in
                 
                 if(succeeded) {
@@ -110,7 +105,7 @@ extension Project {
                 else {
                     print("\nUPDATE Failed!\n")
                 }
-                postComleted (succeeded, msg)
+                postCompleted (succeeded, msg)
         })
     }
 }

@@ -27,7 +27,7 @@ class NewDepartmentTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "saveToDepartment" {
+        if segue.identifier == "saveToDepartments" {
             print(self.idLabel.text!)
             print(self.dnameText.text!)
             department.dname = self.dnameText.text!

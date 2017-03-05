@@ -4,12 +4,15 @@ class NewProjectTableViewController: UITableViewController {
     
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var pnameText: UITextField!
+    @IBOutlet weak var midText: UITextField!
+    @IBOutlet weak var fnameText: UITextField!
+    @IBOutlet weak var lnameText: UITextField!
 
-    
     var project: Project! = Project()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("\n ", project, "\n")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -32,6 +35,8 @@ class NewProjectTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "saveToProjects" {
             project.pname = self.pnameText.text!
+            project.mid = self.midText.text!
+            print("\nprepare: ", project, "\n")
         }
     }
     

@@ -39,7 +39,7 @@ extension WEmployee {
     
     static func getWEmployees(completion: @escaping ([WEmployee]) -> Void) {
         var wemployees: [WEmployee] = []
-        let getUrl = "projectdetails"
+        let getUrl = "projectdetails/"
         
         Api.read(getUrl: getUrl) { (data, succeeded, error)
             in
@@ -64,6 +64,10 @@ extension WEmployee {
             }
             completion(wemployees)
         }
+        
+    }
+    
+    static func getID() {
         
     }
     

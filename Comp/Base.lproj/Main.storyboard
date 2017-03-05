@@ -260,7 +260,7 @@
                     <navigationItem key="navigationItem" title="Department" id="ZTZ-ux-0vJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vmQ-bd-POt">
                             <connections>
-                                <segue destination="LMl-hn-8Gr" kind="unwind" unwindAction="cancelToDepartments:" id="v1Z-rx-xPI"/>
+                                <segue destination="LMl-hn-8Gr" kind="unwind" identifier="cancelToDepartments" unwindAction="cancelToDepartments:" id="v1Z-rx-xPI"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="5eT-pl-1Ky">
@@ -298,7 +298,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV4-MT-QiT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV4-MT-QiT">
                                                     <rect key="frame" x="8" y="0.0" width="359" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -365,6 +365,141 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="a7b-Qc-06D">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="l5k-oF-AU0">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l5k-oF-AU0" id="7R8-eG-3o4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Manager ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STI-4X-qVS">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="anL-xf-wW8">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="anL-xf-wW8" id="skN-df-Iki">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vO2-cF-bcy">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRu-7L-w2Q">
+                                                    <rect key="frame" x="8" y="-1" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="vXI-Ce-BEy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gJX-ou-eE2">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gJX-ou-eE2" id="1eo-bI-N0p">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Manger First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zI-Yn-ZKt">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tau-HA-fRx">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tau-HA-fRx" id="Ban-lD-5U0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-qJ-Teg">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Gf-wF-5Ma">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="ibh-tU-6NX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hLj-9S-jvr">
+                                        <rect key="frame" x="0.0" y="352" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hLj-9S-jvr" id="kiY-5L-tf3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Manager Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-EJ-FId">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bJN-Yc-jFI">
+                                        <rect key="frame" x="0.0" y="396" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bJN-Yc-jFI" id="lQK-zT-7az">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Hf-OO-vYa">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NhY-Sw-hhC">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="APq-bZ-rOO" id="x5x-ak-Jwc"/>
@@ -374,24 +509,27 @@
                     <navigationItem key="navigationItem" title="Add New Project" id="Iwf-az-LRA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SbW-kL-Xh4">
                             <connections>
-                                <segue destination="WZM-Ly-feH" kind="unwind" unwindAction="cancelToProjects:" id="BUj-Z5-0nZ"/>
+                                <segue destination="WZM-Ly-feH" kind="unwind" identifier="cancelToProjects" unwindAction="cancelToProjects:" id="BUj-Z5-0nZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="JU6-kU-81r">
                             <connections>
-                                <segue destination="WZM-Ly-feH" kind="unwind" unwindAction="saveToProjects:" id="6tb-PZ-aQm"/>
+                                <segue destination="WZM-Ly-feH" kind="unwind" identifier="saveToProjects" unwindAction="saveToProjects:" id="6tb-PZ-aQm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fnameText" destination="1Gf-wF-5Ma" id="mr8-m5-Dbj"/>
                         <outlet property="idLabel" destination="wV4-MT-QiT" id="XrJ-CQ-rJq"/>
+                        <outlet property="lnameText" destination="NhY-Sw-hhC" id="MA2-Yo-lqD"/>
+                        <outlet property="midText" destination="hRu-7L-w2Q" id="Kze-j1-nZ0"/>
                         <outlet property="pnameText" destination="XIq-Rt-26f" id="zmc-Sc-nz7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="St5-SZ-cIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WZM-Ly-feH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="566"/>
+            <point key="canvasLocation" x="2688.8000000000002" y="565.36731634182911"/>
         </scene>
         <!--ProjectDetail-->
         <scene sceneID="F7r-Fo-0BX">
@@ -601,12 +739,12 @@
                     <navigationItem key="navigationItem" title="Project Details" id="eeI-tx-z0h">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7LP-4s-af8">
                             <connections>
-                                <segue destination="KV4-Oi-Lhn" kind="unwind" unwindAction="cancelToProjects:" id="8Vw-jg-TIJ"/>
+                                <segue destination="KV4-Oi-Lhn" kind="unwind" identifier="cancelToProjects" unwindAction="cancelToProjects:" id="8Vw-jg-TIJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="zY3-pF-dC0">
                             <connections>
-                                <segue destination="KV4-Oi-Lhn" kind="unwind" unwindAction="updateToProjects:" id="QEO-w6-JOz"/>
+                                <segue destination="KV4-Oi-Lhn" kind="unwind" identifier="updateToProjects" unwindAction="updateToProjects:" id="QEO-w6-JOz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -693,7 +831,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="wa6-dP-TfZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="rPX-5K-Kv2">
                             <connections>
-                                <segue destination="dDP-p6-NHJ" kind="unwind" unwindAction="cancelToProjects:" id="hdR-hI-zz7"/>
+                                <segue destination="dDP-p6-NHJ" kind="unwind" identifier="cancelToProjects" unwindAction="cancelToProjects:" id="hdR-hI-zz7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -958,12 +1096,12 @@
                     <navigationItem key="navigationItem" title="Add New Department" id="EGI-ci-Hag">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="46w-tP-7V6">
                             <connections>
-                                <segue destination="SpV-fF-STR" kind="unwind" unwindAction="cancelToDepartments:" id="KTA-76-YTM"/>
+                                <segue destination="SpV-fF-STR" kind="unwind" identifier="cancelToDepartments" unwindAction="cancelToDepartments:" id="KTA-76-YTM"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="J2d-di-nbl">
                             <connections>
-                                <segue destination="SpV-fF-STR" kind="unwind" unwindAction="saveToDepartment:" id="kQh-Ng-FM4"/>
+                                <segue destination="SpV-fF-STR" kind="unwind" identifier="saveToDepartments" unwindAction="saveToDepartments:" id="kQh-Ng-FM4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1519,7 +1657,7 @@
                     <navigationItem key="navigationItem" title="Employee" id="xt8-FF-2fj">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IPl-UC-cO6">
                             <connections>
-                                <segue destination="pdC-wM-Tha" kind="unwind" unwindAction="cancelToEmployees:" id="xbq-6X-JFr"/>
+                                <segue destination="pdC-wM-Tha" kind="unwind" identifier="cancelToEmployees" unwindAction="cancelToEmployees:" id="xbq-6X-JFr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="B0B-Lc-mmo">

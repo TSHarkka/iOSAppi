@@ -26,7 +26,7 @@ class ProjectsTableViewController: UITableViewController {
     func loadData() -> Void {
         Project.getProjects { (projects) in
             self.projects = projects
-            print("\n proj: ")
+            print("\nproj: ")
             print(self.projects)
             
             DispatchQueue.main.async(execute: {
@@ -76,8 +76,8 @@ class ProjectsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             
+            // Delete the row from the data source
             let proj = self.projects[indexPath.row]
             Project.deleteProject(proj: proj, postCompleted: { (succeeded, msg) -> () in
                 print ("delete proj " + msg)
@@ -159,7 +159,7 @@ class ProjectsTableViewController: UITableViewController {
     
     @IBAction func updateToProjects(_ segue: UIStoryboardSegue) {
         if let projectController = segue.source as? ProjectDetailTableViewController {
-            Project.updateProject(proj: projectController.project, postComleted: {
+            Project.updateProject(proj: projectController.project, postCompleted: {
                 (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
