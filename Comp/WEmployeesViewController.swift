@@ -1,13 +1,13 @@
 import UIKit
 
-class ProjectsTableViewController: UITableViewController {
+class WEmployeesViewController: UITableViewController {
     
-    var projects: [Project] = []
+    var wemployees: [WEmployee] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.addTarget(self, action: #selector(ProjectsTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(WEmployeesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         self.loadData()
     }
     
@@ -24,14 +24,14 @@ class ProjectsTableViewController: UITableViewController {
     }
     
     func loadData() -> Void {
-        Project.getProjects { (projects) in
-            self.projects = projects
-            print("\n proj: ")
-            print(self.projects)
+        WEmployee.getWEmployees { (wemployees) in
+            self.wemployees = wemployees
+            print("wemp: ")
+            print(self.wemployees)
             
             DispatchQueue.main.async(execute: {
-                print("proj: ")
-                print(self.projects.count, "\n")
+                print("wemp: ")
+                print(self.wemployees.count)
                 self.tableView.reloadData()
                 
             })
@@ -50,15 +50,15 @@ class ProjectsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return projects.count
+        return wemployees.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath) as! ProjectCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WEmployeeCell", for: indexPath) as! WEmployeeCell
         
-        let project = projects[indexPath.row] as Project
-        cell.project = project
+        let wemployee = wemployees[indexPath.row] as WEmployee
+        cell.wemployee = wemployee
         
         return cell;
     }
@@ -78,12 +78,14 @@ class ProjectsTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             
-            let proj = self.projects[indexPath.row]
-            Project.deleteProject(proj: proj, postCompleted: { (succeeded, msg) -> () in
-                print ("delete proj " + msg)
+            let wemp = self.wemployees[indexPath.row]
+            WEmployee.deleteWEmployee(wemp: wemp, postCompleted: { (succeeded, msg) -> () in
+                print ("delete wemp " + msg)
                 
                 if succeeded {
-                    self.projects.remove(at: indexPath.row)
+                    
+                    self.wemployees.remove(at: indexPath.row)
+                    
                 }
                 // update ui
                 DispatchQueue.main.async(execute: {
@@ -113,58 +115,35 @@ class ProjectsTableViewController: UITableViewController {
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "projectDetail"  {
+        if segue.identifier == "wemployeeDetail"  {
             
             let cell = sender as! UITableViewCell
             let indexPath = self.tableView.indexPath(for: cell)
             
             let nav = segue.destination as! UINavigationController
-            let detailProject = nav.topViewController as! ProjectDetailTableViewController            
-            detailProject.project = self.projects[indexPath!.row]
-            detailProject.projIndex = indexPath
+            let detailWEmployee = nav.topViewController as! WEmployeeDetailViewController
+            
+            detailWEmployee.wemployee = self.wemployees[indexPath!.row]
+            detailWEmployee.wempIndex = indexPath
             
         }
-      
-      // projectin tietojen lahettaminen teammember nakymalle poista
-      /*if segue.identifier == "passProjectID"  {
-        // haetaan valitun projectin projekti numero ja lahetetaan se TeamMemberTableViewControllerille
-         let cell = sender as! UIButton
-         let indexPath = self.tableView.indexPath(for: cell)
-         let nav = segue.destination as! UINavigationController
-         let detailProject = nav.topViewController as! TeamMemberTableViewController
-         detailProject.project = self.projects[indexPath!.row]
-         detailProject.projIndex = indexPath
-      }
-      */
     }
- 
-   
-    // if cancel is pressed in project details
-    @IBAction func cancelToProjects (_ segue: UIStoryboardSegue) {
+    
+    // if cancel is pressed in wemployee details
+    @IBAction func cancelToWEmployees (_ segue: UIStoryboardSegue) {
         
     }
     
-    // if Done is pressed in project details
-    @IBAction func saveToProjects(_ segue:UIStoryboardSegue) {
+    // if Done is pressed in wemployee details
+    @IBAction func saveToWEmployees(_ segue:UIStoryboardSegue) {
         
-        if let projectController = segue.source as? NewProjectTableViewController {
-            Project.createProject(proj:projectController.project, postCompleted: { (succeeded, msg) -> () in
+        if let WEmployeeController = segue.source as? NewWEmployeeViewController {
+            WEmployee.createWEmployee(wemp:WEmployeeController.wemployee, postCompleted: { (succeeded, msg) -> () in
                 if succeeded {
                     self.loadData()
                 }
             })
             
-        }
-    }
-    
-    @IBAction func updateToProjects(_ segue: UIStoryboardSegue) {
-        if let projectController = segue.source as? ProjectDetailTableViewController {
-            Project.updateProject(proj: projectController.project, postComleted: {
-                (succeeded, msg) -> () in
-                if succeeded {
-                    self.loadData()
-                }
-            })
         }
     }
 }

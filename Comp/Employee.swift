@@ -94,6 +94,8 @@ extension Employee {
     }
     
     static func createEmployee(emp: Employee, postCompleted : @escaping (Bool, String) -> Void) {
+      print("\ncreate alkaa\n")
+        print(emp, "\n")
         let createUrl = "employee"
         Api.write(method: "POST",
                   body:["fname":emp.fname!,
@@ -118,6 +120,8 @@ extension Employee {
     }
     // Tämä asetettava sequeUnwindin identifieriksi, jotta toimenpiteet tehdaan
     static func updateEmployee(emp: Employee , postCompleted : @escaping (Bool, String) -> Void) {
+      print("\nupdate alkaa\n")
+      print(emp, "\n")
         let updateUrl = "employee/" + emp.id
         Api.write(method: "PUT",
                   body:["fname":emp.fname!,

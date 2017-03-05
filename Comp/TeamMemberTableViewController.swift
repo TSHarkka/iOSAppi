@@ -4,6 +4,14 @@ class TeamMemberTableViewController: UITableViewController {
     
     var teamMembers: [TeamMember] = []
     
+    var teamMember: TeamMember! = TeamMember()
+    var tmemIndex: IndexPath!
+   
+    // valitun projektin tiedot poista
+    var project: Project! = Project()
+    // projectin polku poista
+    var projIndex: IndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

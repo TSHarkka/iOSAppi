@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tie-Vj-Kn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1477.5" y="567.5"/>
+            <point key="canvasLocation" x="-3023" y="-452"/>
         </scene>
         <!--Departments Table View Controller-->
         <scene sceneID="Wcn-GR-BbN">
@@ -132,7 +132,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="TEAM"/>
                                             <connections>
-                                                <segue destination="yPN-xf-Vvj" kind="presentation" id="h38-DG-8Wd"/>
+                                                <segue destination="yPN-xf-Vvj" kind="presentation" identifier="passProjectID" id="h38-DG-8Wd"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -703,6 +703,103 @@
             </objects>
             <point key="canvasLocation" x="2687.1999999999998" y="2192.6536731634183"/>
         </scene>
+        <!--Root View Controller-->
+        <scene sceneID="XIS-IV-TOK">
+            <objects>
+                <tableViewController storyboardIdentifier="WEmployeesViewController" id="wip-Dp-fbx" customClass="WEmployeesViewController" customModule="Comp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="UlM-RV-Xkb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WEmployeeCell" rowHeight="82" id="d3u-FT-qXm" customClass="WEmployeeCell" customModule="Comp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d3u-FT-qXm" id="0GB-FW-dJY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Etunimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFF-qm-efV">
+                                            <rect key="frame" x="134" y="21" width="57" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sukunimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGB-1c-NR3">
+                                            <rect key="frame" x="134" y="40" width="70" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tunnit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9W-7z-GRY">
+                                            <rect key="frame" x="134" y="0.0" width="48" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="450.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9G-rL-LRL">
+                                            <rect key="frame" x="199" y="0.0" width="71" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Projekti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7q-ZE-RLA">
+                                            <rect key="frame" x="8" y="0.0" width="58" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tyontekijanro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu3-l3-n2X">
+                                            <rect key="frame" x="134" y="60" width="103" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eidLabel" destination="Pu3-l3-n2X" id="ewO-QW-pVH"/>
+                                    <outlet property="fname" destination="kFF-qm-efV" id="Osn-2I-dD7"/>
+                                    <outlet property="hoursLabel" destination="H9G-rL-LRL" id="fhA-vk-6Gj"/>
+                                    <outlet property="lname" destination="dGB-1c-NR3" id="yEW-7M-tvY"/>
+                                    <outlet property="pnameLabel" destination="I7q-ZE-RLA" id="Vbf-dr-gjY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wip-Dp-fbx" id="5rf-9w-qlb"/>
+                            <outlet property="delegate" destination="wip-Dp-fbx" id="4rD-15-kvq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="XBg-Bi-yQ4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6l-t9-RyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445.60000000000002" y="3651.7241379310349"/>
+        </scene>
+        <!--Project Work-->
+        <scene sceneID="tip-K9-Kgl">
+            <objects>
+                <navigationController id="KAm-yu-wo0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Project Work" id="Ast-Oe-XHy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzo-60-XqO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wip-Dp-fbx" kind="relationship" relationship="rootViewController" id="E6m-yA-Tmj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CmS-wc-K8B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-554" y="3652"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tY6-GW-ZKz">
             <objects>
@@ -894,6 +991,7 @@
                         <segue destination="qXD-Rl-s90" kind="relationship" relationship="viewControllers" id="Qw5-2h-HsX"/>
                         <segue destination="7gi-S4-dFi" kind="relationship" relationship="viewControllers" id="hto-D5-FCU"/>
                         <segue destination="c8K-bO-EWA" kind="relationship" relationship="viewControllers" id="zMr-Fa-at6"/>
+                        <segue destination="KAm-yu-wo0" kind="relationship" relationship="viewControllers" id="wj5-k2-JJz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJ9-vn-Jju" userLabel="First Responder" sceneMemberID="firstResponder"/>

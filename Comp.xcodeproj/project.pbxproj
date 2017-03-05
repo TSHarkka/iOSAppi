@@ -19,6 +19,11 @@
 		A27BE6711E3F9299007F6366 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27BE6701E3F9299007F6366 /* Cache.swift */; };
 		A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */; };
 		A281B9611E48CFD10095D9F5 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */; };
+		B941FA2B1E6BF9950017CABB /* NewWEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B941FA261E6BF9950017CABB /* NewWEmployeeViewController.swift */; };
+		B941FA2C1E6BF9950017CABB /* WEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B941FA271E6BF9950017CABB /* WEmployee.swift */; };
+		B941FA2D1E6BF9950017CABB /* WEmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B941FA281E6BF9950017CABB /* WEmployeeCell.swift */; };
+		B941FA2E1E6BF9950017CABB /* WEmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B941FA291E6BF9950017CABB /* WEmployeeDetailViewController.swift */; };
+		B941FA2F1E6BF9950017CABB /* WEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B941FA2A1E6BF9950017CABB /* WEmployeesViewController.swift */; };
 		B94F83D61E69BB4500F3933C /* NewTeamMemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D11E69BB4500F3933C /* NewTeamMemberTableViewController.swift */; };
 		B94F83D71E69BB4500F3933C /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D21E69BB4500F3933C /* TeamMember.swift */; };
 		B94F83D81E69BB4500F3933C /* TeamMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94F83D31E69BB4500F3933C /* TeamMemberCell.swift */; };
@@ -51,6 +56,11 @@
 		A27BE6701E3F9299007F6366 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		A281B95E1E48BA330095D9F5 /* NewEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEmployeeViewController.swift; sourceTree = "<group>"; };
 		A281B9601E48CFD10095D9F5 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
+		B941FA261E6BF9950017CABB /* NewWEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NewWEmployeeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B941FA271E6BF9950017CABB /* WEmployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WEmployee.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B941FA281E6BF9950017CABB /* WEmployeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WEmployeeCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B941FA291E6BF9950017CABB /* WEmployeeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = WEmployeeDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B941FA2A1E6BF9950017CABB /* WEmployeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WEmployeesViewController.swift; sourceTree = "<group>"; };
 		B94F83D11E69BB4500F3933C /* NewTeamMemberTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTeamMemberTableViewController.swift; sourceTree = "<group>"; };
 		B94F83D21E69BB4500F3933C /* TeamMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
 		B94F83D31E69BB4500F3933C /* TeamMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberCell.swift; sourceTree = "<group>"; };
@@ -99,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A2117DF61E36447F00234CC8 /* Main.storyboard */,
+				B941FA251E6BF88E0017CABB /* ProjectEmployees */,
 				B9C0B9771E65DE1700F3CB9B /* Project */,
 				B9FDECB11E51FC8000DF1328 /* Department */,
 				B9FDECB01E51FBE700DF1328 /* Employee */,
@@ -111,6 +122,18 @@
 				A2117DFE1E36447F00234CC8 /* Info.plist */,
 			);
 			path = Comp;
+			sourceTree = "<group>";
+		};
+		B941FA251E6BF88E0017CABB /* ProjectEmployees */ = {
+			isa = PBXGroup;
+			children = (
+				B941FA261E6BF9950017CABB /* NewWEmployeeViewController.swift */,
+				B941FA271E6BF9950017CABB /* WEmployee.swift */,
+				B941FA281E6BF9950017CABB /* WEmployeeCell.swift */,
+				B941FA291E6BF9950017CABB /* WEmployeeDetailViewController.swift */,
+				B941FA2A1E6BF9950017CABB /* WEmployeesViewController.swift */,
+			);
+			name = ProjectEmployees;
 			sourceTree = "<group>";
 		};
 		B94F83D01E69BA3300F3933C /* Team */ = {
@@ -235,14 +258,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A27BE6711E3F9299007F6366 /* Cache.swift in Sources */,
+				B941FA2C1E6BF9950017CABB /* WEmployee.swift in Sources */,
 				B95600C51E6885C300222679 /* NewProjectTableViewController.swift in Sources */,
 				A2117E051E3644B500234CC8 /* EmployeesViewController.swift in Sources */,
+				B941FA2B1E6BF9950017CABB /* NewWEmployeeViewController.swift in Sources */,
 				B94F83D91E69BB4500F3933C /* TeamMemberDetailTableViewController.swift in Sources */,
 				B95600C91E6885C300222679 /* ProjectsTableViewController.swift in Sources */,
+				B941FA2E1E6BF9950017CABB /* WEmployeeDetailViewController.swift in Sources */,
 				B94F83D81E69BB4500F3933C /* TeamMemberCell.swift in Sources */,
 				A2117E071E3645B300234CC8 /* Employee.swift in Sources */,
 				B95600C81E6885C300222679 /* ProjectDetailTableViewController.swift in Sources */,
 				A281B95F1E48BA330095D9F5 /* NewEmployeeViewController.swift in Sources */,
+				B941FA2F1E6BF9950017CABB /* WEmployeesViewController.swift in Sources */,
 				B9C0B9761E65B25C00F3CB9B /* DepartmentDetailTableViewController.swift in Sources */,
 				A2117E091E364B3E00234CC8 /* Api.swift in Sources */,
 				B94F83D71E69BB4500F3933C /* TeamMember.swift in Sources */,
@@ -257,6 +284,7 @@
 				A27BE66F1E3F8588007F6366 /* HomeViewController.swift in Sources */,
 				A281B9611E48CFD10095D9F5 /* EmployeeDetailViewController.swift in Sources */,
 				B9FDECB71E52000C00DF1328 /* Department.swift in Sources */,
+				B941FA2D1E6BF9950017CABB /* WEmployeeCell.swift in Sources */,
 				B95600C61E6885C300222679 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
