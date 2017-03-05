@@ -129,7 +129,7 @@ extension Employee {
                         "salary":emp.salary!,
                         "bdate":emp.bdate!,
                         "email":emp.email!,
-                        "dep":emp.dep!,
+                        "dep":emp.dep ?? "0",
                         "phone1":emp.phone1!,
                         "phone2":emp.phone2!,
                         "image":emp.image!]

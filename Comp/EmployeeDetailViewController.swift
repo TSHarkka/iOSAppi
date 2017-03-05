@@ -6,7 +6,8 @@ class EmployeeDetailViewController: UITableViewController {
     @IBOutlet weak var fname: UITextField!
     @IBOutlet weak var lname: UITextField!
     @IBOutlet weak var bdate: UITextField!
-    @IBOutlet weak var dname: UITextField!
+    @IBOutlet weak var depText: UITextField!
+    @IBOutlet weak var dnameLabel: UILabel!
     @IBOutlet weak var salary: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phone1: UITextField!
@@ -23,7 +24,8 @@ class EmployeeDetailViewController: UITableViewController {
         self.fname.text = self.employee.fname
         self.lname.text = self.employee.lname
         self.bdate.text = self.employee.bdate
-        self.dname.text = self.employee.dname
+        self.depText.text = self.employee.dep
+        self.dnameLabel.text = self.employee.dname
         self.email.text = self.employee.email
         self.salary.text = String(format: "%.2f", self.employee.salary!)
         self.phone1.text = self.employee.phone1
@@ -57,7 +59,7 @@ class EmployeeDetailViewController: UITableViewController {
         if segue.identifier == "updateToEmployees" {
             employee.fname = self.fname.text!
             employee.lname = self.lname.text!
-            employee.dname = self.dname.text!
+            employee.dep = self.depText.text!
             employee.bdate = self.bdate.text!
             employee.email = self.email.text!
             employee.salary = Double(self.salary.text!) ?? 0.0

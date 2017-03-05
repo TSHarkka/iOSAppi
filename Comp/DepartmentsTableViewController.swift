@@ -137,7 +137,7 @@ class DepartmentsTableViewController: UITableViewController {
     
     
     // if Done is pressed in employee details
-    @IBAction func saveToDepartment(_ segue:UIStoryboardSegue) {
+    @IBAction func saveToDepartments(_ segue:UIStoryboardSegue) {
         
         if let departmentController = segue.source as? NewDepartmentTableViewController {
             Department.createDepartment(dep:departmentController.department, postCompleted: { (succeeded, msg) -> () in
