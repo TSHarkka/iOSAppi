@@ -775,14 +775,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Etunimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFF-qm-efV">
-                                            <rect key="frame" x="134" y="21" width="57" height="21"/>
+                                            <rect key="frame" x="134" y="21" width="136" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sukunimi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGB-1c-NR3">
-                                            <rect key="frame" x="134" y="40" width="70" height="21"/>
+                                            <rect key="frame" x="134" y="40" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -803,14 +803,21 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Projekti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7q-ZE-RLA">
-                                            <rect key="frame" x="8" y="0.0" width="58" height="21"/>
+                                            <rect key="frame" x="8" y="0.0" width="118" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRW-Q3-dlD">
+                                            <rect key="frame" x="8" y="21" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tyontekijanro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu3-l3-n2X">
-                                            <rect key="frame" x="134" y="60" width="103" height="21"/>
+                                            <rect key="frame" x="134" y="60" width="151" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -819,9 +826,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="eidLabel" destination="Pu3-l3-n2X" id="ewO-QW-pVH"/>
+                                    <outlet property="eidLabel" destination="Pu3-l3-n2X" id="DSB-qr-xBK"/>
                                     <outlet property="fnameLabel" destination="kFF-qm-efV" id="fr2-ui-cok"/>
                                     <outlet property="hoursLabel" destination="H9G-rL-LRL" id="fhA-vk-6Gj"/>
+                                    <outlet property="idLabel" destination="fRW-Q3-dlD" id="XZ2-u0-lAk"/>
                                     <outlet property="lnameLabel" destination="dGB-1c-NR3" id="nJV-bM-N7Y"/>
                                     <outlet property="pnameLabel" destination="I7q-ZE-RLA" id="Vbf-dr-gjY"/>
                                 </connections>
@@ -841,11 +849,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="okh-tf-xZK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6l-t9-RyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Bag-0F-sEy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2886" y="2158"/>
+            <point key="canvasLocation" x="2885.5999999999999" y="2156.6716641679163"/>
         </scene>
         <!--Project Work-->
         <scene sceneID="tip-K9-Kgl">
@@ -909,6 +920,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xp0-NH-FY0"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="0s6-Qt-l7n">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnn-VH-BPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

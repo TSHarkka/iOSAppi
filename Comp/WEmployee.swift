@@ -24,7 +24,7 @@ extension WEmployee {
 
 extension WEmployee {
     init?(json: [String: Any]) {
-        self.eid = (json["id"] as? String)!
+        self.eid = (json["eid"] as? String)!
         self.fname = json["fname"] as? String ?? ""
         self.lname = json["lname"] as? String ?? ""
         let tmpHours = json["hours"] as? String ?? "0.0"

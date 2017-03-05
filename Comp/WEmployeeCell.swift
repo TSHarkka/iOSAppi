@@ -4,6 +4,7 @@ class WEmployeeCell: UITableViewCell {
     @IBOutlet weak var fnameLabel: UILabel!
     @IBOutlet weak var lnameLabel: UILabel!
     @IBOutlet weak var eidLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var pnameLabel: UILabel!
     //@IBOutlet weak var avatarImageView: UIImageView!
@@ -16,10 +17,11 @@ class WEmployeeCell: UITableViewCell {
             fnameLabel.text = wemployee.fname!
             lnameLabel.text = wemployee.lname!
             eidLabel.text = wemployee.eid
+            idLabel.text = wemployee.id!
             hoursLabel.text = String(wemployee.hours!)
             pnameLabel.text = wemployee.pname!
          
-            /*
+            /*  en kerenyt lisaamaan
             if let empImg = wemployee?.image {
                 let imageUrl = URL(string: Api.companyImageUrl + empImg)
                 
